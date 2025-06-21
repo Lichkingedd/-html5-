@@ -313,6 +313,67 @@ ga('create', 'UA-30027142-1', 'w3layouts.com');
 <!-- events -->
 	<div id="events" class="events">
 		<div class="container">
+		<style>
+		/* 项目卡片容器 */
+		.cal, .events-grid11 {
+		  display: flex;
+		  flex-direction: column;
+		  height: 100%;
+		  border-radius: 0.5rem;
+		  overflow: hidden;
+		  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+		}
+
+		/* 卡片信息区域 */
+		.cal-info, .events-grid11-info {
+		  flex: 1;
+		  padding: 1rem;
+		  overflow: hidden; /* 关键：隐藏溢出内容 */
+		}
+
+		/* 项目标题 */
+		.cal-info h4, .events-grid11-info h4 {
+		  margin-top: 0;
+		  margin-bottom: 0.5rem;
+		  font-size: 1.2rem;
+		}
+
+		/* 项目描述文本 */
+		.cal-info p, .events-grid11-info p {
+		  margin: 0;
+		  color: #666;
+		  font-size: 0.9rem;
+
+		  /* 多行文本溢出处理 */
+		  display: -webkit-box;
+		  -webkit-line-clamp: 4; /* 限制为4行 */
+		  -webkit-box-orient: vertical;
+		  overflow: hidden;
+		  text-overflow: ellipsis;
+		}
+
+		/* 日期标签样式 */
+		.events-grid11-info label {
+		  font-weight: normal;
+		  color: #888;
+		  margin-left: 0.5rem;
+		}
+
+		/* 清除浮动 */
+		.clearfix::after {
+		  content: "";
+		  display: table;
+		  clear: both;
+		}
+
+		/* 响应式布局调整 */
+		@media (max-width: 768px) {
+		  .col-md-4 {
+			width: 100%;
+			margin-bottom: 1rem;
+		  }
+		}
+		</style>
 			<h3>项目经历</h3>
 			<div class="events-grids">
 				<div class="col-md-4 events-grid">
