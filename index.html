@@ -313,67 +313,6 @@ ga('create', 'UA-30027142-1', 'w3layouts.com');
 <!-- events -->
 	<div id="events" class="events">
 		<div class="container">
-		<style>
-		/* 项目卡片容器 */
-		.cal, .events-grid11 {
-		  display: flex;
-		  flex-direction: column;
-		  height: 100%;
-		  border-radius: 0.5rem;
-		  overflow: hidden;
-		  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-		}
-
-		/* 卡片信息区域 */
-		.cal-info, .events-grid11-info {
-		  flex: 1;
-		  padding: 1rem;
-		  overflow: hidden; /* 关键：隐藏溢出内容 */
-		}
-
-		/* 项目标题 */
-		.cal-info h4, .events-grid11-info h4 {
-		  margin-top: 0;
-		  margin-bottom: 0.5rem;
-		  font-size: 1.2rem;
-		}
-
-		/* 项目描述文本 */
-		.cal-info p, .events-grid11-info p {
-		  margin: 0;
-		  color: #666;
-		  font-size: 0.9rem;
-
-		  /* 多行文本溢出处理 */
-		  display: -webkit-box;
-		  -webkit-line-clamp: 4; /* 限制为4行 */
-		  -webkit-box-orient: vertical;
-		  overflow: hidden;
-		  text-overflow: ellipsis;
-		}
-
-		/* 日期标签样式 */
-		.events-grid11-info label {
-		  font-weight: normal;
-		  color: #888;
-		  margin-left: 0.5rem;
-		}
-
-		/* 清除浮动 */
-		.clearfix::after {
-		  content: "";
-		  display: table;
-		  clear: both;
-		}
-
-		/* 响应式布局调整 */
-		@media (max-width: 768px) {
-		  .col-md-4 {
-			width: 100%;
-			margin-bottom: 1rem;
-		  }
-		}
-		</style>
 			<h3>项目经历</h3>
 			<div class="events-grids">
 				<div class="col-md-4 events-grid">
@@ -389,8 +328,8 @@ ga('create', 'UA-30027142-1', 'w3layouts.com');
 					<div class="cal">
 						<img src="images/1.png" alt=" " class="img-responsive" />
 						<div class="cal-info">
-						  <h4>《敦煌幻境·丝路秘卷》</h4>
-							<p>文化旅游类游戏；敦煌壁画是连接历史记忆的&quot;量子胶片&quot;，每一笔颜料都承载文明熵值。当现代人触碰壁画时，意识将坠入&quot;时之沙漏&quot;，在唐代会昌二年（842年）与2023年间穿梭，修复被文物贩子撕裂的&quot;文明因果链&quot;。</p>
+							<h4>《敦煌幻境·丝路秘卷》</h4>
+                            <p>文化旅游类游戏；敦煌壁画是连接历史记忆的&quot;量子胶片&quot;，每一笔颜料都承载文明熵值。在唐代会昌二年（842年）与2023年间穿梭，修复被文物贩子撕裂的&quot;文明因果链&quot;。</p>
 						</div>
 					</div>
 				</div>
@@ -399,7 +338,7 @@ ga('create', 'UA-30027142-1', 'w3layouts.com');
 						<img src="images/1.png" alt=" " class="img-responsive" />
 						<div class="cal-info">
 							<h4>《守望金子塔·法老的怒火》</h4>
-							<p>一群勇敢的探险家听闻了一个关于金字塔的神秘传说 —— 在吉萨金字塔群的深处，隐藏着一座从未被世人发现的神秘金字塔，这座金字塔中封存着一件能够改变世界命运的神器。为了探寻真相，这群探险家决定深入金字塔内部，开启一场惊心动魄的探秘之旅。</p>
+                            <p>在吉萨金字塔群的深处，隐藏着一座从未被世人发现的神秘金字塔，这座金字塔中封存着一件能够改变世界命运的神器。这群探险家决定深入金字塔内部，开启一场惊心动魄的探秘之旅。</p>
 						</div>
 					</div>
 				</div>
@@ -411,9 +350,9 @@ ga('create', 'UA-30027142-1', 'w3layouts.com');
 						<span>01.</span>
 						<div class="events-grid11-info">
 							<h4><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i>
-							  <label>3 June 2025</label>
-						    《复活节岛解密·呼吸的摩艾石像》</h4>
-							<p>复活节岛，这片孤悬于太平洋中的神秘土地，以其巨大的摩艾石像而闻名于世。数百年来，这些石像背后的谜团引发了无数猜测：它们为何而建？建造者是谁？又为何岛上文明会突然崩解？在这个 VR 大空间体验中，我们将融合科幻与文化元素，重新诠释复活节岛的秘密，揭示其作为宇宙时空节点的隐藏意义。</p>
+                              <label>3 June 2025</label>
+                            《复活节岛解密·呼吸的摩艾石像》</h4>
+                            <p>复活节岛，这片孤悬于太平洋中的神秘土地，以其巨大的摩艾石像而闻名于世。数百年来，这些石像背后的谜团引发了无数猜测：它们为何而建？建造者是谁？又为何岛上文明会突然崩解？</p>
 						</div>
 					</div>
 				</div>
@@ -423,10 +362,8 @@ ga('create', 'UA-30027142-1', 'w3layouts.com');
 						<div class="events-grid11-info">
 							<h4><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i>
 							  <label>2 June 2025</label>
-						    《长安十二时辰·暗夜迷局》</h4>
-							<p>将长安城视为运行《开元律》算法的巨型生物计算机，纵火案实为改写王朝底层代码的病毒攻击。穿越至神龙元年（705年）参与五王政变，通过操控大明宫光影改变历史走向,"诸位看这长安城，白昼是圣人的棋盘，入夜便是你我共写的传奇"</p>
-
-						  </p>
+《长安十二时辰·暗夜迷局》</h4>
+                            <p>穿越至神龙元年（705年）参与五王政变，通过操控大明宫光影改变历史走向,"诸位看这长安城，白昼是圣人的棋盘，入夜便是你我共写的传奇"</p>
 						</div>
 					</div>
 				</div>
@@ -436,9 +373,8 @@ ga('create', 'UA-30027142-1', 'w3layouts.com');
 						<div class="events-grid11-info">
 							<h4><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i>
 							  <label>1 June 2025</label>
-						    《苍穹宇宙·探索未来》</h4>
-							<p>2035年；中国已建成第二代 &ldquo;天宫 N 号&rdquo; 空间站群，月球基地进入常态化运营，而 “苍穹宇宙 计划是首个采用模块化核聚变引擎的深空探测器项目。玩家作为航天科技大学应届毕业生，通过全球遴选获得进入酒泉卫星发射中心 VR 实训基地的资格。这里的 VR 大空间系统采用光子全息投影 + 六自由度万向跑步机，能模拟 1:1 的失重行走、舱内操作甚至太空辐射压感知。</p>
-							<p></p>
+《苍穹宇宙·探索未来》</h4>
+                            <p>2035年；中国已建成第二代 &ldquo;天宫 N 号&rdquo; 空间站群，月球基地进入常态化运营，而 “苍穹宇宙 计划是首个采用模块化核聚变引擎的深空探测器项目。</p>
 						</div>
 					</div>
 				</div>
