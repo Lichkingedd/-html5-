@@ -319,7 +319,7 @@ ga('create', 'UA-30027142-1', 'w3layouts.com');
 					<div class="cal">
 						<img src="images/1.png" alt=" " class="img-responsive" />
 						<div class="cal-info">
-							<h4>Unity横板小游戏</h4>
+							<h4>《玛雅·消失的文明》</h4>
 							<p>使用iUnityC#开发的横板3D小游戏、类似于弓箭传说，具有完整的战斗、背包、任务、升级道具系统、游戏风格为可爱卡通风、特效炫酷华丽、剧情玩法多样</p>
 						</div>
 					</div>
@@ -390,84 +390,567 @@ ga('create', 'UA-30027142-1', 'w3layouts.com');
 	  <div class="gallery-grids">
 			<div class="col-md-6 baner-top">
 				<figure class="effect-bubba">
-					<a href="images/2.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="images/2.jpg" alt="" class="img-responsive" />
-						<figcaption>
-							<h4>守望金字塔·法老的怒火</h4>
-							<p>金子塔不仅是法老的陵墓更是通往神灵世界的通道</p>	
-						</figcaption>	
-					</a>
-				</figure>	
+				  <a href="#" class="video-link" onclick="playVideo('Video/1.mp4')">
+					<img src="images/2.jpg" alt="视频封面图" class="img-responsive" />
+					<figcaption>
+					  <h4>守望金字塔·法老的怒火</h4>
+					  <p>金子塔不仅是法老的陵墓更是通往神灵世界的通道</p>	
+					</figcaption>	
+				  </a>
+				</figure>
+
+				<!-- 视频播放器容器（移到figure外部） -->
+				<div id="videoOverlay" class="hidden">
+				  <div id="videoContainer">
+					<video id="videoPlayer" width="640" height="360" controls>
+					  <source id="videoSource" src="" type="video/mp4">
+					  您的浏览器不支持HTML5视频播放。
+					</video>
+<!--					<button onclick="closeVideo()">关闭</button>-->
+				  </div>
+				</div>
+
+				<script>
+				function playVideo(videoUrl) {
+				  // 显示遮罩层和视频容器
+				  document.getElementById('videoOverlay').classList.remove('hidden');
+				  // 设置视频源
+				  document.getElementById('videoSource').src = videoUrl;
+				  // 加载并播放视频
+				  document.getElementById('videoPlayer').load();
+				  document.getElementById('videoPlayer').play();
+				  // 阻止事件冒泡
+				  event.stopPropagation();
+				}
+
+				function closeVideo() {
+				  // 暂停视频并隐藏容器
+				  document.getElementById('videoPlayer').pause();
+				  document.getElementById('videoOverlay').classList.add('hidden');
+				}
+
+				// 点击遮罩层关闭视频
+				document.getElementById('videoOverlay').addEventListener('click', function(e) {
+				  if (e.target === this) {
+					closeVideo();
+				  }
+				});
+				</script>
+
+				<style>
+				.hidden { display: none; }
+
+				#videoOverlay {
+				  position: fixed;
+				  top: 0;
+				  left: 0;
+				  width: 100%;
+				  height: 100%;
+				  background: rgba(0, 0, 0, 0.8); /* 半透明背景 */
+				  z-index: 2000; /* 提高层级 */
+				  display: flex;
+				  justify-content: center;
+				  align-items: center;
+				}
+
+				#videoContainer {
+				  background: black;
+				  padding: 20px;
+				  border-radius: 8px;
+				  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+				  max-width: 90%;
+				  max-height: 90%;
+				}
+
+				#videoPlayer {
+				  max-width: 100%;
+				  max-height: calc(100vh - 100px);
+				}
+				</style>
 			</div>
 			<div class="col-md-6 baner-top">
 				<figure class="effect-bubba">
-					<a href="images/3.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="images/3.jpg" alt="" class="img-responsive" />
-						<figcaption>
+				  <a href="#" class="video-link" onclick="playVideo('Video/6.mp4')">
+					<img src="images/3.jpg" alt="视频封面图" class="img-responsive" />
+					<figcaption>
 							<h4>复活节岛解密·呼吸的摩艾石像</h4>
 							<p>太平洋中的神秘孤岛突然出现的文明</p>	
-						</figcaption>	
-					</a>
-				</figure>	
+					</figcaption>	
+				  </a>
+				</figure>
+
+				<!-- 视频播放器容器（移到figure外部） -->
+				<div id="videoOverlay" class="hidden">
+				  <div id="videoContainer">
+					<video id="videoPlayer" width="640" height="360" controls>
+					  <source id="videoSource" src="" type="video/mp4">
+					  您的浏览器不支持HTML5视频播放。
+					</video>
+<!--					<button onclick="closeVideo()">关闭</button>-->
+				  </div>
+				</div>
+
+				<script>
+				function playVideo(videoUrl) {
+				  // 显示遮罩层和视频容器
+				  document.getElementById('videoOverlay').classList.remove('hidden');
+				  // 设置视频源
+				  document.getElementById('videoSource').src = videoUrl;
+				  // 加载并播放视频
+				  document.getElementById('videoPlayer').load();
+				  document.getElementById('videoPlayer').play();
+				  // 阻止事件冒泡
+				  event.stopPropagation();
+				}
+
+				function closeVideo() {
+				  // 暂停视频并隐藏容器
+				  document.getElementById('videoPlayer').pause();
+				  document.getElementById('videoOverlay').classList.add('hidden');
+				}
+
+				// 点击遮罩层关闭视频
+				document.getElementById('videoOverlay').addEventListener('click', function(e) {
+				  if (e.target === this) {
+					closeVideo();
+				  }
+				});
+				</script>
+
+				<style>
+				.hidden { display: none; }
+
+				#videoOverlay {
+				  position: fixed;
+				  top: 0;
+				  left: 0;
+				  width: 100%;
+				  height: 100%;
+				  background: rgba(0, 0, 0, 0.8); /* 半透明背景 */
+				  z-index: 2000; /* 提高层级 */
+				  display: flex;
+				  justify-content: center;
+				  align-items: center;
+				}
+
+				#videoContainer {
+				  background: black;
+				  padding: 20px;
+				  border-radius: 8px;
+				  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+				  max-width: 90%;
+				  max-height: 90%;
+				}
+
+				#videoPlayer {
+				  max-width: 100%;
+				  max-height: calc(100vh - 100px);
+				}
+				</style>
 			</div>
 			<div class="clearfix"> </div>
 			<div class="baner-row">
 				<div class="col-md-4 baner-bottom">
-					<figure class="effect-bubba">
-						<a href="images/6.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-							<img src="images/6.jpg" alt="" class="img-responsive" />
-							<figcaption>
+				<figure class="effect-bubba">
+				  <a href="#" class="video-link" onclick="playVideo('Video/3.mp4')">
+					<img src="images/6.jpg" alt="视频封面图" class="img-responsive" />
+					<figcaption>
 								<h4 class="sec">长安十二城·暗夜迷局</h4>
 								<p>上元烈火中的盛唐元宇宙诗篇</p>	
-							</figcaption>
-						</a>
-					</figure>	
+					</figcaption>	
+				  </a>
+				</figure>
+
+				<!-- 视频播放器容器（移到figure外部） -->
+				<div id="videoOverlay" class="hidden">
+				  <div id="videoContainer">
+					<video id="videoPlayer" width="640" height="360" controls>
+					  <source id="videoSource" src="" type="video/mp4">
+					  您的浏览器不支持HTML5视频播放。
+					</video>
+<!--					<button onclick="closeVideo()">关闭</button>-->
+				  </div>
+				</div>
+
+				<script>
+				function playVideo(videoUrl) {
+				  // 显示遮罩层和视频容器
+				  document.getElementById('videoOverlay').classList.remove('hidden');
+				  // 设置视频源
+				  document.getElementById('videoSource').src = videoUrl;
+				  // 加载并播放视频
+				  document.getElementById('videoPlayer').load();
+				  document.getElementById('videoPlayer').play();
+				  // 阻止事件冒泡
+				  event.stopPropagation();
+				}
+
+				function closeVideo() {
+				  // 暂停视频并隐藏容器
+				  document.getElementById('videoPlayer').pause();
+				  document.getElementById('videoOverlay').classList.add('hidden');
+				}
+
+				// 点击遮罩层关闭视频
+				document.getElementById('videoOverlay').addEventListener('click', function(e) {
+				  if (e.target === this) {
+					closeVideo();
+				  }
+				});
+				</script>
+
+				<style>
+				.hidden { display: none; }
+
+				#videoOverlay {
+				  position: fixed;
+				  top: 0;
+				  left: 0;
+				  width: 100%;
+				  height: 100%;
+				  background: rgba(0, 0, 0, 0.8); /* 半透明背景 */
+				  z-index: 2000; /* 提高层级 */
+				  display: flex;
+				  justify-content: center;
+				  align-items: center;
+				}
+
+				#videoContainer {
+				  background: black;
+				  padding: 20px;
+				  border-radius: 8px;
+				  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+				  max-width: 90%;
+				  max-height: 90%;
+				}
+
+				#videoPlayer {
+				  max-width: 100%;
+				  max-height: calc(100vh - 100px);
+				}
+				</style>
 				</div>
 				<div class="col-md-4 baner-bottom">
-					<figure class="effect-bubba">
-						<a href="images/7.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-							<img src="images/7.jpg" alt=""/ class="img-responsive" >
-							<figcaption>
+				<figure class="effect-bubba">
+				  <a href="#" class="video-link" onclick="playVideo('Video/7.mp4')">
+					<img src="images/7.jpg" alt="视频封面图" class="img-responsive" />
+					<figcaption>
 								<h4 class="sec">玛雅·消失的文明</h4>
 								<p>时间褶皱中的文明密码</p>	
-							</figcaption>	
-						</a>
-					</figure>	
+					</figcaption>	
+				  </a>
+				</figure>
+
+				<!-- 视频播放器容器（移到figure外部） -->
+				<div id="videoOverlay" class="hidden">
+				  <div id="videoContainer">
+					<video id="videoPlayer" width="640" height="360" controls>
+					  <source id="videoSource" src="" type="video/mp4">
+					  您的浏览器不支持HTML5视频播放。
+					</video>
+<!--					<button onclick="closeVideo()">关闭</button>-->
+				  </div>
+				</div>
+
+				<script>
+				function playVideo(videoUrl) {
+				  // 显示遮罩层和视频容器
+				  document.getElementById('videoOverlay').classList.remove('hidden');
+				  // 设置视频源
+				  document.getElementById('videoSource').src = videoUrl;
+				  // 加载并播放视频
+				  document.getElementById('videoPlayer').load();
+				  document.getElementById('videoPlayer').play();
+				  // 阻止事件冒泡
+				  event.stopPropagation();
+				}
+
+				function closeVideo() {
+				  // 暂停视频并隐藏容器
+				  document.getElementById('videoPlayer').pause();
+				  document.getElementById('videoOverlay').classList.add('hidden');
+				}
+
+				// 点击遮罩层关闭视频
+				document.getElementById('videoOverlay').addEventListener('click', function(e) {
+				  if (e.target === this) {
+					closeVideo();
+				  }
+				});
+				</script>
+
+				<style>
+				.hidden { display: none; }
+
+				#videoOverlay {
+				  position: fixed;
+				  top: 0;
+				  left: 0;
+				  width: 100%;
+				  height: 100%;
+				  background: rgba(0, 0, 0, 0.8); /* 半透明背景 */
+				  z-index: 2000; /* 提高层级 */
+				  display: flex;
+				  justify-content: center;
+				  align-items: center;
+				}
+
+				#videoContainer {
+				  background: black;
+				  padding: 20px;
+				  border-radius: 8px;
+				  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+				  max-width: 90%;
+				  max-height: 90%;
+				}
+
+				#videoPlayer {
+				  max-width: 100%;
+				  max-height: calc(100vh - 100px);
+				}
+				</style>
 				</div>
 				<div class="col-md-4 baner-bottom">
-					<figure class="effect-bubba">
-						<a href="images/8.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-							<img src="images/8.jpg" alt=""/ class="img-responsive" >
-							<figcaption>
+				<figure class="effect-bubba">
+				  <a href="#" class="video-link" onclick="playVideo('Video/2.mp4')">
+					<img src="images/8.jpg" alt="视频封面图" class="img-responsive" />
+					<figcaption>
 								<h4 class="sec">敦煌幻境·丝路密卷</h4>
 								<p>千年历史背景下的敦煌秘境</p>	
-							</figcaption>	
-						</a>
-					</figure>	
+					</figcaption>	
+				  </a>
+				</figure>
+
+				<!-- 视频播放器容器（移到figure外部） -->
+				<div id="videoOverlay" class="hidden">
+				  <div id="videoContainer">
+					<video id="videoPlayer" width="640" height="360" controls>
+					  <source id="videoSource" src="" type="video/mp4">
+					  您的浏览器不支持HTML5视频播放。
+					</video>
+<!--					<button onclick="closeVideo()">关闭</button>-->
+				  </div>
+				</div>
+
+				<script>
+				function playVideo(videoUrl) {
+				  // 显示遮罩层和视频容器
+				  document.getElementById('videoOverlay').classList.remove('hidden');
+				  // 设置视频源
+				  document.getElementById('videoSource').src = videoUrl;
+				  // 加载并播放视频
+				  document.getElementById('videoPlayer').load();
+				  document.getElementById('videoPlayer').play();
+				  // 阻止事件冒泡
+				  event.stopPropagation();
+				}
+
+				function closeVideo() {
+				  // 暂停视频并隐藏容器
+				  document.getElementById('videoPlayer').pause();
+				  document.getElementById('videoOverlay').classList.add('hidden');
+				}
+
+				// 点击遮罩层关闭视频
+				document.getElementById('videoOverlay').addEventListener('click', function(e) {
+				  if (e.target === this) {
+					closeVideo();
+				  }
+				});
+				</script>
+
+				<style>
+				.hidden { display: none; }
+
+				#videoOverlay {
+				  position: fixed;
+				  top: 0;
+				  left: 0;
+				  width: 100%;
+				  height: 100%;
+				  background: rgba(0, 0, 0, 0.8); /* 半透明背景 */
+				  z-index: 2000; /* 提高层级 */
+				  display: flex;
+				  justify-content: center;
+				  align-items: center;
+				}
+
+				#videoContainer {
+				  background: black;
+				  padding: 20px;
+				  border-radius: 8px;
+				  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+				  max-width: 90%;
+				  max-height: 90%;
+				}
+
+				#videoPlayer {
+				  max-width: 100%;
+				  max-height: calc(100vh - 100px);
+				}
+				</style>
 				</div>
 				<div class="clearfix"> </div>
 			</div>		
 			<div class="col-md-6 baner-top">
 				<figure class="effect-bubba">
-					<a href="images/5.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="images/5.jpg" alt="" class="img-responsive" />
-						<figcaption>
+				  <a href="#" class="video-link" onclick="playVideo('Video/4.mp4')">
+					<img src="images/5.jpg" alt="视频封面图" class="img-responsive" />
+					<figcaption>
 							<h4>亚特兰蒂斯·深海回响</h4>
 							<p>神秘海洋文明中量子神经元的漫游</p>	
-						</figcaption>	
-					</a>
-				</figure>	
+					</figcaption>	
+				  </a>
+				</figure>
+
+				<!-- 视频播放器容器（移到figure外部） -->
+				<div id="videoOverlay" class="hidden">
+				  <div id="videoContainer">
+					<video id="videoPlayer" width="640" height="360" controls>
+					  <source id="videoSource" src="" type="video/mp4">
+					  您的浏览器不支持HTML5视频播放。
+					</video>
+<!--					<button onclick="closeVideo()">关闭</button>-->
+				  </div>
+				</div>
+
+				<script>
+				function playVideo(videoUrl) {
+				  // 显示遮罩层和视频容器
+				  document.getElementById('videoOverlay').classList.remove('hidden');
+				  // 设置视频源
+				  document.getElementById('videoSource').src = videoUrl;
+				  // 加载并播放视频
+				  document.getElementById('videoPlayer').load();
+				  document.getElementById('videoPlayer').play();
+				  // 阻止事件冒泡
+				  event.stopPropagation();
+				}
+
+				function closeVideo() {
+				  // 暂停视频并隐藏容器
+				  document.getElementById('videoPlayer').pause();
+				  document.getElementById('videoOverlay').classList.add('hidden');
+				}
+
+				// 点击遮罩层关闭视频
+				document.getElementById('videoOverlay').addEventListener('click', function(e) {
+				  if (e.target === this) {
+					closeVideo();
+				  }
+				});
+				</script>
+
+				<style>
+				.hidden { display: none; }
+
+				#videoOverlay {
+				  position: fixed;
+				  top: 0;
+				  left: 0;
+				  width: 100%;
+				  height: 100%;
+				  background: rgba(0, 0, 0, 0.8); /* 半透明背景 */
+				  z-index: 2000; /* 提高层级 */
+				  display: flex;
+				  justify-content: center;
+				  align-items: center;
+				}
+
+				#videoContainer {
+				  background: black;
+				  padding: 20px;
+				  border-radius: 8px;
+				  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+				  max-width: 90%;
+				  max-height: 90%;
+				}
+
+				#videoPlayer {
+				  max-width: 100%;
+				  max-height: calc(100vh - 100px);
+				}
+				</style>
 			</div>
 			<div class="col-md-6 baner-top">
 				<figure class="effect-bubba">
-					<a href="images/4.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-						<img src="images/4.jpg" alt="" class="img-responsive" />
-						<figcaption>
+				  <a href="#" class="video-link" onclick="playVideo('Video/5.mp4')">
+					<img src="images/4.jpg" alt="视频封面图" class="img-responsive" />
+					<figcaption>
 							<h4>苍穹宇宙·探索未来</h4>
 							<p>2035年量子计算机与可控核聚变技术突破的黄金时代</p>	
-						</figcaption>	
-					</a>
-				</figure>	
+					</figcaption>	
+				  </a>
+				</figure>
+
+				<!-- 视频播放器容器（移到figure外部） -->
+				<div id="videoOverlay" class="hidden">
+				  <div id="videoContainer">
+					<video id="videoPlayer" width="640" height="360" controls>
+					  <source id="videoSource" src="" type="video/mp4">
+					  您的浏览器不支持HTML5视频播放。
+					</video>
+<!--					<button onclick="closeVideo()">关闭</button>-->
+				  </div>
+				</div>
+
+				<script>
+				function playVideo(videoUrl) {
+				  // 显示遮罩层和视频容器
+				  document.getElementById('videoOverlay').classList.remove('hidden');
+				  // 设置视频源
+				  document.getElementById('videoSource').src = videoUrl;
+				  // 加载并播放视频
+				  document.getElementById('videoPlayer').load();
+				  document.getElementById('videoPlayer').play();
+				  // 阻止事件冒泡
+				  event.stopPropagation();
+				}
+
+				function closeVideo() {
+				  // 暂停视频并隐藏容器
+				  document.getElementById('videoPlayer').pause();
+				  document.getElementById('videoOverlay').classList.add('hidden');
+				}
+
+				// 点击遮罩层关闭视频
+				document.getElementById('videoOverlay').addEventListener('click', function(e) {
+				  if (e.target === this) {
+					closeVideo();
+				  }
+				});
+				</script>
+
+				<style>
+				.hidden { display: none; }
+
+				#videoOverlay {
+				  position: fixed;
+				  top: 0;
+				  left: 0;
+				  width: 100%;
+				  height: 100%;
+				  background: rgba(0, 0, 0, 0.8); /* 半透明背景 */
+				  z-index: 2000; /* 提高层级 */
+				  display: flex;
+				  justify-content: center;
+				  align-items: center;
+				}
+
+				#videoContainer {
+				  background: black;
+				  padding: 20px;
+				  border-radius: 8px;
+				  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+				  max-width: 90%;
+				  max-height: 90%;
+				}
+
+				#videoPlayer {
+				  max-width: 100%;
+				  max-height: calc(100vh - 100px);
+				}
+				</style>
 			</div>
 			<div class="clearfix"> </div>
 		</div>
