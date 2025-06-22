@@ -399,42 +399,53 @@ ga('create', 'UA-30027142-1', 'w3layouts.com');
 				  </a>
 				</figure>
 
-				<!-- 视频播放器容器（移到figure外部） -->
-				<div id="videoOverlay" class="hidden">
-				  <div id="videoContainer">
-					<video id="videoPlayer" width="640" height="360" controls>
-					  <source id="videoSource" src="" type="video/mp4">
-					  您的浏览器不支持HTML5视频播放。
-					</video>
-<!--					<button onclick="closeVideo()">关闭</button>-->
-				  </div>
-				</div>
+<!-- 视频遮罩层 -->
+<div id="videoOverlay" class="hidden">
+  <div id="videoContainer">
+    <video id="videoPlayer" controls
+      controlsList="nodownload nofullscreen noremoteplayback"
+      disablePictureInPicture
+      disableRemotePlayback
+      oncontextmenu="return false">
+      <source id="videoSource" src="" type="video/mp4">
+      您的浏览器不支持HTML5视频播放。
+    </video>
+    <button onclick="closeVideo()" style="position:absolute;top:10px;right:10px;color:white;background:none;border:none;font-size:20px;">✕</button>
+  </div>
+</div>
 
 				<script>
-				function playVideo(videoUrl) {
-				  // 显示遮罩层和视频容器
-				  document.getElementById('videoOverlay').classList.remove('hidden');
-				  // 设置视频源
-				  document.getElementById('videoSource').src = videoUrl;
-				  // 加载并播放视频
-				  document.getElementById('videoPlayer').load();
-				  document.getElementById('videoPlayer').play();
-				  // 阻止事件冒泡
-				  event.stopPropagation();
-				}
+function playVideo(videoUrl, event) {
+  event.stopPropagation();
+  const overlay = document.getElementById('videoOverlay');
+  const player = document.getElementById('videoPlayer');
+  const source = document.getElementById('videoSource');
 
-				function closeVideo() {
-				  // 暂停视频并隐藏容器
-				  document.getElementById('videoPlayer').pause();
-				  document.getElementById('videoOverlay').classList.add('hidden');
-				}
+  overlay.classList.remove('hidden');
+  source.src = videoUrl;
+  player.load();
+  player.play();
+}
 
-				// 点击遮罩层关闭视频
-				document.getElementById('videoOverlay').addEventListener('click', function(e) {
-				  if (e.target === this) {
-					closeVideo();
-				  }
-				});
+function closeVideo() {
+  const player = document.getElementById('videoPlayer');
+  const overlay = document.getElementById('videoOverlay');
+
+  player.pause();
+  player.currentTime = 0;
+  overlay.classList.add('hidden');
+
+  setTimeout(() => {
+	document.getElementById('videoSource').src = '';
+  }, 100);
+}
+
+// 监听点击遮罩关闭
+document.getElementById('videoOverlay').addEventListener('click', function (e) {
+  if (e.target.id === 'videoOverlay') {
+	closeVideo();
+  }
+});
 				</script>
 
 				<style>
