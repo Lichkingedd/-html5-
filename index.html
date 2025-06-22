@@ -399,84 +399,108 @@ ga('create', 'UA-30027142-1', 'w3layouts.com');
 				  </a>
 				</figure>
 
-<!-- 视频遮罩层 -->
-<div id="videoOverlay" class="hidden">
-  <div id="videoContainer">
-    <video id="videoPlayer" controls
-      controlsList="nodownload nofullscreen noremoteplayback"
-      disablePictureInPicture
-      disableRemotePlayback
-      oncontextmenu="return false">
-      <source id="videoSource" src="" type="video/mp4">
-      您的浏览器不支持HTML5视频播放。
-    </video>
-    <button onclick="closeVideo()" style="position:absolute;top:10px;right:10px;color:white;background:none;border:none;font-size:20px;">✕</button>
+  <!-- 视频遮罩容器 -->
+  <div id="videoOverlay" class="hidden">
+    <div id="videoContainer">
+      <!-- 关闭按钮 -->
+      <button id="closeButton" onclick="closeVideo()">✕</button>
+
+      <!-- 视频播放器 -->
+      <video
+        id="videoPlayer"
+        controls
+        controlsList="nodownload nofullscreen noremoteplayback"
+        disablePictureInPicture
+        disableRemotePlayback
+        oncontextmenu="return false">
+        <source id="videoSource" src="" type="video/mp4">
+        您的浏览器不支持 HTML5 视频播放。
+      </video>
+    </div>
   </div>
-</div>
 
 				<script>
-function playVideo(videoUrl, event) {
-  event.stopPropagation();
-  const overlay = document.getElementById('videoOverlay');
-  const player = document.getElementById('videoPlayer');
-  const source = document.getElementById('videoSource');
+    function playVideo(videoUrl, event) {
+      event.stopPropagation(); // 防止事件冒泡
+      const overlay = document.getElementById('videoOverlay');
+      const player = document.getElementById('videoPlayer');
+      const source = document.getElementById('videoSource');
 
-  overlay.classList.remove('hidden');
-  source.src = videoUrl;
-  player.load();
-  player.play();
-}
+      // 设置视频路径并播放
+      overlay.classList.remove('hidden');
+      source.src = videoUrl;
+      player.load();
+      player.play();
+    }
 
-function closeVideo() {
-  const player = document.getElementById('videoPlayer');
-  const overlay = document.getElementById('videoOverlay');
+    function closeVideo() {
+      const player = document.getElementById('videoPlayer');
+      const overlay = document.getElementById('videoOverlay');
+      const source = document.getElementById('videoSource');
 
-  player.pause();
-  player.currentTime = 0;
-  overlay.classList.add('hidden');
+      player.pause();
+      player.currentTime = 0;
+      overlay.classList.add('hidden');
 
-  setTimeout(() => {
-	document.getElementById('videoSource').src = '';
-  }, 100);
-}
+      // 确保 video 不留 src，避免某些浏览器出错
+      setTimeout(() => {
+        source.src = '';
+        player.load();
+      }, 50);
+    }
 
-// 监听点击遮罩关闭
-document.getElementById('videoOverlay').addEventListener('click', function (e) {
-  if (e.target.id === 'videoOverlay') {
-	closeVideo();
-  }
-});
+    // 点击遮罩空白处关闭视频
+    document.getElementById('videoOverlay').addEventListener('click', function (e) {
+      if (e.target.id === 'videoOverlay') {
+        closeVideo();
+      }
+    });
 				</script>
 
 				<style>
-				.hidden { display: none; }
+    .hidden {
+      display: none;
+    }
 
-				#videoOverlay {
-				  position: fixed;
-				  top: 0;
-				  left: 0;
-				  width: 100%;
-				  height: 100%;
-				  background: rgba(0, 0, 0, 0.8); /* 半透明背景 */
-				  z-index: 2000; /* 提高层级 */
-				  display: flex;
-				  justify-content: center;
-				  align-items: center;
-				}
+    #videoOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 2000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-				#videoContainer {
-				  background: black;
-				  padding: 20px;
-				  border-radius: 8px;
-				  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-				  max-width: 90%;
-				  max-height: 90%;
-				}
+    #videoContainer {
+      position: relative;
+      background: black;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      max-width: 90%;
+      max-height: 90%;
+    }
 
-				#videoPlayer {
-				  max-width: 100%;
-				  max-height: calc(100vh - 100px);
-				}
+    #videoPlayer {
+      max-width: 100%;
+      max-height: calc(100vh - 100px);
+    }
+
+    #closeButton {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 10;
+    }
 				</style>
 			</div>
 			<div class="col-md-6 baner-top">
